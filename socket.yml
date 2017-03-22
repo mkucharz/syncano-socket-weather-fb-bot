@@ -1,0 +1,27 @@
+name: weather-fb-bot
+description: Description of weather-fb-bot
+
+endpoints:
+  hello:
+    description: Hello world!
+    file: scripts/hello.js
+    parameters:
+      firstname:
+        type: string
+        description: "First name of the person you want to greet"
+        example: "Tyler"
+      lastname:
+        type: string
+        description: "Last name of the person you want to greet"
+        example: "Durden"
+    response:
+      mimetype: text/plain
+      examples:
+        -
+          exit_code: 200
+          description: Success
+          example: Hello Tyler Durden!
+        -
+          exit_code: 400
+          description: Failed
+          example: No first name or last name provided :(
