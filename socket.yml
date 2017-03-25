@@ -1,27 +1,21 @@
 name: weather-fb-bot
-description: Description of weather-fb-bot
-
-endpoints:
-  hello:
-    description: Hello world!
-    file: scripts/hello.js
+version: 0.0.2
+description: FB weather bot for weather queries
+event_handlers:
+  events.messenger-bot.message-received:
+    description: Handling requests from FB
+    file: scripts/respond.js
     parameters:
-      firstname:
+      city:
         type: string
-        description: "First name of the person you want to greet"
-        example: "Tyler"
-      lastname:
+        description: "Name of the city for which weather forecast will be checked"
+        example: "Oslo"
+      sender:
         type: string
-        description: "Last name of the person you want to greet"
-        example: "Durden"
-    response:
-      mimetype: text/plain
-      examples:
-        -
-          exit_code: 200
-          description: Success
-          example: Hello Tyler Durden!
-        -
-          exit_code: 400
-          description: Failed
-          example: No first name or last name provided :(
+        description: "Facebook Sender ID"
+        example: "1301614733231481"
+dependencies:
+  messenger-bot:
+    version: 0.1.5
+  openweathermap:
+    version: 0.0.28
