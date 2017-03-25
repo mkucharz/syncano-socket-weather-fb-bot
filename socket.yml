@@ -1,6 +1,7 @@
 name: weather-fb-bot
 version: 0.0.2
-description: FB weather bot for weather queries
+description: FB bot for weather queries
+url: https://github.com/mkucharz/syncano-socket-weather-fb-bot
 event_handlers:
   events.messenger-bot.message-received:
     description: Handling requests from FB
